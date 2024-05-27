@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <link rel="stylesheet" href="bulma/bulma.css">
-  <link rel="stylesheet" href="css/employee.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'Bulma/bulma.css') }}">
+  <link rel="stylesheet" href="static/css/employee.css">
 </head>
 
 <body>
@@ -21,43 +21,24 @@
           <tbody>
 
             <tr>
-              <th class="is-link has-background-grey-darker">Employee 1</th>
+              <th class="is-link has-background-grey-darker">Employee ID</th>
               <th class="is-link">Last Name</th>
               <th class="is-link has-background-grey-darker">First Name</th>
-              <th class="is-link">Gender</th>
-              <th class="is-link has-background-grey-darker">Position</th>
+              <th class="is-link">Middle Name</th>
+              
             </tr>
+            
+            {% for employee in employees %}
             <tr>
-              <th>Full Time</th>
-              <td>Bisnan</td>
-              <td>Joven</td>
-              <td>Female</td>
-              <td>CEO</td>
-            </tr>
+                  <td>{{ employee[0] }}</td>
+                  <td>{{ employee[1] }}</td>
+                  <td>{{ employee[2] }}</td>
+                  <td>{{ employee[3] }}</td>
+                  
+             
+                  </tr>
+                {%endfor %}
 
-            <tr>
-              <th>Full Time</th>
-              <td>Macapalag</td>
-              <td>Amelia</td>
-              <td>Bisexual</td>
-              <td>Manager</td>
-            </tr>
-            <tr>
-              <th>Full Time</th>
-              <td>Naloguitan</td>
-              <td>Rolynda</td>
-              <td>Lesbian</td>
-              <td>Chief Janitor</td>
-            </tr>
-
-            <tr>
-              <th>Full Time</th>
-              <td>Benedicto</td>
-              <td>Chakaa</td>
-              <td>Tomboy</td>
-              <td>Sexytary</td>
-            </tr>
-          
   </center>
 
   <body>

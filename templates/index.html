@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'Bulma/bulma.css') }}">
+    <title>Flask app</title>
+    <style>
+        .box{
+          width: 500px;
+        }
+      </style>
+</head>
+<body>
+      <center>
+        <h1 class="title has-has-text-danger-dark ">LOGIN</h1>
+        <form  action="check-user" method="POST" class="box has-background-link-dark">
+        
+            <div class="field">
+              <label class="has-text-white">Username:</label>
+              <div class="control">
+                <input class="input" name="username" type="text" placeholder="" />
+                <body>
+              </div>
+            </div> 
+        
+            <div class="field">
+              <label class="has-text-white">Password: </label>
+              <div class="control">
+                <input class="input" name="password" type="password" placeholder="" />
+              </div>
+            </div>
+          
+            <button type="submit"class="button has-text-white has-has-text-warning has-background-dark">LOGIN</button>
+          </form>
+          </center>
+    </body>
+    </html>
+</body>
+</html>
