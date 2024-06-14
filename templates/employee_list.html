@@ -22,6 +22,7 @@
     <title>Message Box</title>
     <style>
         .messagebox {
+            position: relative;
             display: inline-block;
             padding: 5px 10px;
             border: 2px solid #666666;
@@ -30,6 +31,8 @@
             color: #000;
             margin: 10px;
             cursor: pointer;
+            left: 500px;
+            top: 100px;
         }
 
         .messagebox:hover {
@@ -128,7 +131,7 @@
                   <td class="has-text-centered">
                     <a href="{{ url_for('update_employee', emp_id=employee[0]) }}" class="update_button button is-warning is-small">Update</a>
                     <a href="{{ url_for('delete_employee', emp_id=employee[0]) }}" class="delete_button button is-danger is-small">Delete</a>
-                </td>
+                    </td>
                 </tr>
                 {%endfor %}
 

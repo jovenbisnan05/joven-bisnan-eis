@@ -4,7 +4,7 @@ from users import Users
 from employees import Employees
 
 app = Flask(__name__)
-app.secret_key = "joven"
+app.secret_key = "gege"
 
 @app.route('/')
 def index():
