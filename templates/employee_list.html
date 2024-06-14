@@ -10,9 +10,99 @@
   <link rel="stylesheet" href="static/css/employee.css">
 </head>
 
-<body>
+<body>    
   <div class="box1 has-background-grey-darker has-text-white-bis  is-family-monospace is-size-1 has-text-centered ">
     Employee Information System</div>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Box</title>
+    <style>
+        .messagebox {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 2px solid #666666;
+            border-radius: 5px;
+            background-color: rgb(241, 0, 229);
+            color: #000;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .messagebox:hover {
+            background-color: #ff99cc; /* Change the color on hover */
+        }
+    </style>
+</head>
+<body>
+    {% if message != "" %}
+    <div class="messagebox">{{ message }}</div>
+    {% endif %}
+</body>
+</html>
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <style>
+        .left-box {
+            position: fixed;
+            top: 50%;
+            left: 20px; /* Adjust the left position as needed */
+            transform: translateY(-50%);
+        }
+
+        .left-box button {
+            padding: 15px;
+            border: 2px solid #666666;
+            border-radius: 5px;
+            background-color: rgb(241, 0, 229);
+            color: #000;
+            cursor: pointer;
+        }
+
+        .left-box button:hover {
+            background-color: #ff99cc;
+        }
+    </style>
+</head>
+<body> 
+    <div class="left-box">
+        <button onclick="redirectToAddForm()">Add Employee</button>
+    </div>
+
+    <script>
+        function redirectToAddForm() {
+            window.location.href = "/add-form";
+        }
+    </script>
+</body>
+</html>
+
+</head>
+<body> 
+    <div class="left-box">
+        <button onclick="redirectToAddForm()">Add Employee</button>
+    </div>
+
+    <script>
+        function redirectToAddForm() {
+            window.location.href = "/add-form";
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
   <center>
     <div class="box2">
 
@@ -25,7 +115,8 @@
               <th class="is-link">Last Name</th>
               <th class="is-link has-background-grey-darker">First Name</th>
               <th class="is-link">Middle Name</th>
-              
+              <th class="is-link has-background-grey-darker">Action</th>
+
             </tr>
             
             {% for employee in employees %}
@@ -34,9 +125,11 @@
                   <td>{{ employee[1] }}</td>
                   <td>{{ employee[2] }}</td>
                   <td>{{ employee[3] }}</td>
-                  
-             
-                  </tr>
+                  <td class="has-text-centered">
+                    <a href="{{ url_for('update_employee', emp_id=employee[0]) }}" class="update_button button is-warning is-small">Update</a>
+                    <a href="{{ url_for('delete_employee', emp_id=employee[0]) }}" class="delete_button button is-danger is-small">Delete</a>
+                </td>
+                </tr>
                 {%endfor %}
 
   </center>
